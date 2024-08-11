@@ -1,0 +1,49 @@
+<div class="container mx-auto p-6 bg-gray-100 min-h-screen">
+  <h1 class="text-3xl font-bold text-center text-blue-600 mb-8">ToDo List</h1>
+
+  <form (ngSubmit)="addTodo()" class="flex justify-center mb-6">
+    <input
+      [(ngModel)]="task"
+      name="task"
+      class="border rounded-l p-3 w-full max-w-lg outline-none focus:ring-2 focus:ring-blue-500"
+      placeholder="Add a new task"
+      required
+    />
+    <button
+      type="submit"
+      class="bg-blue-500 text-white p-3 rounded-r hover:bg-blue-600 transition-colors duration-200"
+    >
+      Add Task
+    </button>
+  </form>
+
+  <ul class="space-y-4">
+    <li
+      *ngFor="let todo of todos$ | async"
+      class="flex justify-between items-center p-4 bg-white rounded shadow hover:shadow-lg transition-shadow duration-200"
+    >
+      <span
+        [class.line-through]="todo.completed"
+        class="flex-grow text-lg"
+        [class.text-gray-500]="todo.completed"
+        [class.text-black]="!todo.completed"
+      >
+        {{ todo.task }}
+      </span>
+      <div class="flex space-x-2">
+        <button
+          (click)="toggleTodoCompletion(todo.id)"
+          class="bg-green-500 text-white p-2 rounded hover:bg-green-600 transition-colors duration-200"
+        >
+          {{ todo.completed ? 'Undo' : 'Complete' }}
+        </button>
+        <button
+          (click)="deleteTodo(todo.id)"
+          class="bg-red-500 text-white p-2 rounded hover:bg-red-600 transition-colors duration-200"
+        >
+          Delete
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
