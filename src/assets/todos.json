@@ -1,0 +1,4 @@
+[
+  { "id": 1, "task": "Sample Task 1", "completed": false },
+  { "id": 2, "task": "Sample Task 2", "completed": true }
+]

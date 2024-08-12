@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 import { TodoService } from '../todo.service';
 import { Observable } from 'rxjs';
-import { Todo } from '../todo.model';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-todo-list',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, HttpClientModule],
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css']
 })
 export class TodoListComponent {
-  todos$: Observable<Todo[]>;
+  todos$: Observable<any[]>;
   task: string = '';
 
   constructor(private todoService: TodoService) {
