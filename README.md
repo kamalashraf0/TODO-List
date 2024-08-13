@@ -10,6 +10,7 @@ This project is a ToDo List application built with Angular 18. It leverages obse
 
 - **Angular 18**: Utilizes the latest features and improvements in Angular.
 - **Observables**: For asynchronous data handling and event management.
+- **Tailwind CSS**: A utility-first CSS framework for creating responsive and customizable designs.
 - **Model Binding**: Different model binding techniques are used for efficient data manipulation.
 - **Local Storage**: JSON is used for local storage of tasks.
 - **Routing**: Configured routes for navigation between different views.
